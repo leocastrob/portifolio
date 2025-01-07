@@ -14,7 +14,7 @@ const Stylebutton: React.FC<StylebuttonProps> = ({ children, onClick }) => {
         border: `1px solid ${theme.palette.primary.contrastText}`,
         borderRadius : "3px",
         padding: "5px 15px",
-        width: "100%",
+        width: "90%",
         color: theme.palette.primary.contrastText,
         display: "inline-flex",
         alignItems : "center",
