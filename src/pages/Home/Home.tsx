@@ -1,5 +1,6 @@
 import NavBar from "../../componentes/NavBar"
 import Hero from "./sections/Hero/Hero"
+import Sobre from "./sections/Sobre/Sobre"
 
 const Home = () => {
 
@@ -7,6 +8,7 @@ const Home = () => {
       <>
       <NavBar />
       <Hero />
+      <Sobre />
       </>
     )
   }

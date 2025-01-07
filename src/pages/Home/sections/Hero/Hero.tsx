@@ -8,20 +8,24 @@ import { AnimatedBackground } from "../../../../componentes/AnimatedBackground";
 
 const Hero = () => {
 
-    const Stylehero = styled("div")(({theme})=> ({
-        backgroundColor : theme.palette.primary.main,
-        height : "100vh",
+    const Stylehero = styled("div")(({ theme }) => ({
+        backgroundColor: theme.palette.primary.main,
+        minHeight: "100vh", 
+        width: "100vw", 
         display: "flex",
-        alignItems: "center"
-        
-    }))
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        overflowX: "hidden",
+      }));
+      
 
-    const Styleimg = styled("img")(()=> ({
-       width : "80%",
-       borderRadius : "50%",
-       border: `1px solid ${theme.palette.primary.contrastText}`
-        
-    }))
+    const Styleimg = styled("img")(({ theme }) => ({
+        width: "100%",
+        maxWidth: "320px",
+        borderRadius: "50%",
+        border: `1px solid ${theme.palette.primary.contrastText}`,
+    }));
 
 
     return (
@@ -31,7 +35,7 @@ const Hero = () => {
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
                             <Box position="relative">
-                                <Box position="absolute" width={"150%"} top={-100} right={0}>
+                                <Box position="absolute" width={"150%"} top={-150} right={-100}>
                                     <AnimatedBackground />
                                 </Box>
                                 <Box position="relative" textAlign="center">
@@ -41,10 +45,10 @@ const Hero = () => {
                         </Grid>
                         <Grid item xs={12} md={7}>
                             <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Leonardo Castro</Typography>
-                            <Typography color="primary.contrastText" variant="h2" textAlign="center" >Dev Front-End</Typography>
+                            <Typography color="primary.contrastText" variant="h2" textAlign="center" marginBottom={5}>Dev Front-End</Typography>
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <Botao>
+                                    <Botao onClick = {()=> console.log("Download CV")}>
                                         <DownloadIcon />
                                         <Typography>
                                             Download CV
@@ -52,7 +56,7 @@ const Hero = () => {
                                     </Botao>
                                 </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <Botao>
+                                    <Botao onClick = {()=> console.log("Email")}>
                                         <MailOutlineIcon />
                                         <Typography>
                                             Entre em contato
